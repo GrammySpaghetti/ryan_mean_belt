@@ -1,0 +1,21 @@
+{
+  "name": "express_with_models",
+  "version": "1.0.0",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "ejs": "^2.6.1",
+    "express": "^4.16.3",
+    "express-flash": "0.0.2",
+    "express-session": "^1.15.6",
+    "mongoose": "^5.2.14",
+    "mongoose-auto-increment": "^5.0.1"
+  },
+  "keywords": [],
+  "description": ""
+}
