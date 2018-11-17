@@ -1,0 +1,30 @@
+<div class="bg-info p-1">
+  <div class="bg-danger" *ngFor='let e of err'>
+    <p class='bg-danger'>{{e}}</p>
+  </div>
+  <div class="bg-white border border-dark m-2">
+    <h1>Edit Product</h1>
+    <div class="d-inline-bloc align-top">
+
+      <form class="form-group m-2" (submit)="updateProduct(product)">
+        <label for="name">Product Name:</label>
+        <input class='form-control' type="text" name="name" value="{{product.name}}" required minlength='3' [(ngModel)]='product.name' #name="ngModel">
+        <p class='bg-danger' *ngIf='name.errors'>name must be at least 3 characters</p>
+        <p class='bg-success' *ngIf='name.valid'>valid name</p>
+        <label for="price">Price:</label>
+        <input class='form-control' type="text" name="price" value="{{product.price}}" required minlength='1' [(ngModel)]='product.price' #price='ngModel'>
+        <p class='bg-danger' *ngIf='price.errors'>price is required</p>
+        <p class='bg-success' *ngIf='price.valid'>valid price</p>
+        <label for="qty">Quantity:</label>
+        <input class='form-control' type="text" name="qty" value="{{product.qty}}" required minlength='1' [(ngModel)]='product.qty' #qty='ngModel'>
+        <p class='bg-danger' *ngIf='qty.errors'>quantity is required</p>
+        <p class='bg-success' *ngIf='qty.valid'>valid quantity</p>
+        <button class='btn btn-warning m-1' type="submit" name="button" value='submit' [disabled]='name.errors || price.errors || qty.errors'>Update</button>
+        <a class='btn btn-info m-1' name="reset" (click)='resetProduct()'>Reset</a>
+        <a class='btn btn-danger m-1' [routerLink]="['']">Back</a>
+      </form>
+
+
+    </div>
+  </div>
+</div>

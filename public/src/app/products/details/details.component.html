@@ -1,0 +1,23 @@
+<div class="bg-info p-1">
+  <div class="bg-danger" >
+    <p class='bg-danger' *ngIf='err[0]'>{{err}}</p>
+  </div>
+  <div class="bg-white border border-dark m-2">
+    <div class="d-inline-bloc align-top">
+      <div>
+        <h5 class='d-inline-block mr-1'>Name: </h5>
+        <h5 class='d-inline-block'> {{product?.name}}</h5>
+      </div>
+      <div>
+        <h5 class='d-inline-block mr-1'>Quantity: </h5>
+        <h5 class='d-inline-block'> {{product?.qty}}</h5>
+      </div>
+      <div>
+        <h5 class='d-inline-block mr-1'>Price: </h5>
+        <h5 class='d-inline-block'>$ {{product?.price}}</h5>
+      </div>
+      <a class='btn btn-dark m-1' [routerLink]="['/products']">Back</a>
+      <button class='btn btn-danger m-1' type="button" name="button" (click)='deleteProduct(product._id)'>Delete</button>
+    </div>
+  </div>
+</div>

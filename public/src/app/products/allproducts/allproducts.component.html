@@ -1,0 +1,27 @@
+<div class='container bg-primary'>
+  <h4>Product List:</h4>
+  <a class='btn btn-dark m-1' [routerLink]="['/products/create']">Product Creation</a>
+  <table class="table">
+      <thead class="thead-dark">
+          <tr>
+              <th scope="col">ID</th>
+              <th scope="col">Name</th>
+              <th scope="col">Quantity</th>
+              <th scope="col">Price</th>
+              <th scope="col">Actions</th>
+          </tr>
+      </thead>
+      <tbody *ngFor='let product of products'>
+        <tr>
+          <th scope="row">{{product._id}}</th>
+          <td>{{product.name}}</td>
+          <td>{{product.qty}}</td>
+          <td>${{product.price}}</td>
+          <td>
+            <a class='badge badge-warning m-w' [routerLink]="['/products/edit/', product._id]">Edit</a>
+            <a class='badge badge-success m-1' [routerLink]="['/products/', product._id]">Details</a>
+          </td>
+        </tr>
+      </tbody>
+  </table>
+</div>
